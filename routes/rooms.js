@@ -20,6 +20,7 @@ router.get('/', function (req, res, next) {
 router.post('/create-room', function (req, res, next) {
   const newRoom = req.body.room;
   newRoom.id = rooms.length + 1;
+  newRoom.name = `Room-${rooms.length + 1}`;
   rooms.push(newRoom);
   res.json({ status: 200, message: 'New room added successfully!!' });
 });
